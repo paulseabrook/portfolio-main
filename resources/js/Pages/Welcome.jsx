@@ -28,7 +28,7 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
             </div>
             <Head title="Welcome" />
             <div className="sm:flex sm:justify-center flex-col sm:items-center min-h-screen bg-center bg-greenie selection:text-white">
-                <div className="p-6 text-right">
+                <div className="p-6 pt-0 text-right">
                     <div className="hidden sm:-my-px sm:ml-10 sm:flex">
                         <>
                             <Link href="/">
@@ -71,7 +71,7 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
 
                 <div>
                     <img
-                        className="h-96 w-full rounded-2xl "
+                        className="h-96 max-w-full rounded-2xl "
                         src="/build/assets/headshotNoBG.webp"
                         alt="main logo"
                     />
