@@ -3,13 +3,8 @@ import { Link } from "@inertiajs/react";
 import NavLink from "@/Components/NavLink";
 
 export default function Guest({ children }) {
-    // let href = window.location.href;
-    // const validContact = new RegExp(".*/login$");
-    // console.log(href);
-    // console.log(validContact);
     return (
         <>
-            {/* <p>{href === validContact ? `${href}` : `not working`} </p> */}
             <div className="bg-greenie min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 \\">
                 <div className="flex">
                     <Link href="/">

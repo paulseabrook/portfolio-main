@@ -6,9 +6,6 @@ export default function NavLink({
     children,
     ...props
 }) {
-    // function onButtonClickHandler() {
-    //     window.alert("Please login to contact");
-    // }
     return (
         <Link
             {...props}
@@ -19,7 +16,6 @@ export default function NavLink({
                     : "border-transparent text-white  focus:text-bluie  ") +
                 className
             }
-            // onClick={onButtonClickHandler()}
         >
             {children}
         </Link>
