@@ -1,12 +1,6 @@
 import { Link, Head } from "@inertiajs/react";
 import ApplicationLogo from "@/Components/ApplicationLogo";
 import NavLink from "@/Components/NavLink";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { library } from "@fortawesome/fontawesome-svg-core";
-import { fab } from "@fortawesome/free-brands-svg-icons";
-import { faCheckSquare, faCoffee } from "@fortawesome/free-solid-svg-icons";
-
-library.add(fab, faCheckSquare, faCoffee);
 
 export default function Welcome({ user, auth, laravelVersion, phpVersion }) {
     return (
@@ -144,11 +138,7 @@ export default function Welcome({ user, auth, laravelVersion, phpVersion }) {
                             </div>
                         </div>
                         <div>
-                            <div>
-                                <FontAwesomeIcon icon="check-square" />
-                                Your <FontAwesomeIcon icon="coffee" /> is hot
-                                and ready!
-                            </div>
+                            <div></div>
                             {/* <a
                                 href="https://www.linkedin.com/in/paulwarrenseabrook/"
                                 icon="fa-linked-in"
