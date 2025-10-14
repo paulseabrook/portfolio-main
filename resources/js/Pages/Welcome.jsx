@@ -119,7 +119,7 @@ export default function Welcome({ user, auth, laravelVersion, phpVersion }) {
                         <div>
                             <img
                                 className="h-96 w-full rounded-2xl "
-                                src="/build/assets/headshotNoBG.webp"
+                                src="/build/assets/headshot.jpeg"
                                 alt="main logo"
                             />
                         </div>
@@ -129,29 +129,14 @@ export default function Welcome({ user, auth, laravelVersion, phpVersion }) {
                         <p className="pt-6 text-white text-2xl">
                             Greenville, SC
                         </p>
-                        <div className="pt-6">
+                        {/* <div className="pt-6">
                             <div className="text-white text-xl">
                                 864-561-5306{" "}
                             </div>
                             <div className="text-white text-xl">
                                 paulwarrenseabrook@gmail.com
                             </div>
-                        </div>
-                        <div>
-                            <div></div>
-                            {/* <a
-                                href="https://www.linkedin.com/in/paulwarrenseabrook/"
-                                icon="fa-linked-in"
-                            ></a> */}
-                            {/* <a
-                                href="https://github.com/paulseabrook"
-                                icon={fa - github}
-                            ></a>
-                            <a
-                                href="mailto:paulwarrenseabrook@gmail.com"
-                                className="fa-solid fa-envelope"
-                            ></a> */}
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </div>
