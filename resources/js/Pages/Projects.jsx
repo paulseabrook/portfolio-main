@@ -1,6 +1,7 @@
 import Navigation from "@/Components/Navigation";
 import { Link } from "@inertiajs/react";
 import { Head } from "@inertiajs/react";
+import Footer from "@/Components/footer";
 
 export default function Projects({ auth, active = false, className = "" }) {
     return (
@@ -111,6 +112,7 @@ export default function Projects({ auth, active = false, className = "" }) {
                     <div className="h-1 w-3/4 bg-white  mb-8 mt-8 rounded-2xl"></div>
                 </div>
             </div>
+            <Footer />
         </>
     );
 }

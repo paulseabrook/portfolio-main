@@ -2,6 +2,7 @@ import Navigation from "@/Components/Navigation";
 import { Head } from "@inertiajs/react";
 import { motion } from "framer-motion";
 import { Tooltip } from "@mui/material";
+import Footer from "@/Components/footer";
 
 const skills = [
     { name: "JavaScript", years: 3 },
@@ -82,6 +83,7 @@ export default function Skills({ auth }) {
                     </div>
                 </div>
             </div>
+            <Footer />
         </>
     );
 }

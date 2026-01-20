@@ -15,7 +15,7 @@ export default function Guest({ children }) {
                             href={route("projects")}
                             active={route().current("projects")}
                         >
-                            Projects
+                            Projects TEST
                         </NavLink>
                         <NavLink
                             href={route("skills")}

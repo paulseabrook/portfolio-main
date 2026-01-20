@@ -1,4 +1,5 @@
 import Navigation from "@/Components/Navigation";
+import Footer from "@/Components/footer";
 import { Head } from "@inertiajs/react";
 import { motion } from "framer-motion";
 
@@ -8,7 +9,7 @@ export default function About({ auth }) {
             <Head title="About" />
             <div className="bg-blue-50 min-h-screen">
                 <Navigation auth={auth} user={auth.user} />
-                <main className="max-w-6xl mx-auto py-12 px-6">
+                <main className="max-w-6xl mx-auto pt-4 px-6">
                     {/* Flex container for side-by-side layout */}
                     <div className="flex flex-col md:flex-row gap-8">
                         {/* Image */}
@@ -53,13 +54,14 @@ export default function About({ auth }) {
                             </p>
                             <p className="text-gray-700 leading-relaxed mb-4">
                                 I currently live in Greenville, SC, with my wife
-                                and our newborn daughter. Outside of coding, I
-                                enjoy being active in my church community,
-                                playing the banjo, and reading.
+                                ad our newborn daughter. Outside of programming,
+                                I enjoy spending time with family, attending
+                                church, and reading.
                             </p>
                         </motion.article>
                     </div>
                 </main>
+                <Footer />
             </div>
         </>
     );

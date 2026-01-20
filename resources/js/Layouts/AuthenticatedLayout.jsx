@@ -10,7 +10,7 @@ export default function Authenticated({ user, header, children }) {
         useState(false);
 
     return (
-        <div className="min-h-screen bg-white">
+        <div id="main-div" className="min-h-screen bg-white">
             <nav className=" sm:items-center bg-center bg-greenie selection:text-white">
                 <div className="text-right">
                     <div className="flex justify-between h-24">
@@ -93,11 +93,11 @@ export default function Authenticated({ user, header, children }) {
                             </div>
                         </div>
 
-                        <div className="flex items-center sm:hidden">
+                        <div className="flex items-center sm:hidden mr-5">
                             <button
                                 onClick={() =>
                                     setShowingNavigationDropdown(
-                                        (previousState) => !previousState
+                                        (previousState) => !previousState,
                                     )
                                 }
                                 className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out"
@@ -143,25 +143,44 @@ export default function Authenticated({ user, header, children }) {
                     }
                 >
                     <div className="pt-2 pb-3 space-y-1">
-                        <ResponsiveNavLink
-                            href={route("dashboard")}
-                            active={route().current("dashboard")}
+                        <NavLink
+                            href={route("projects")}
+                            active={route().current("projects")}
                         >
-                            Dashboard
-                        </ResponsiveNavLink>
+                            Projects
+                        </NavLink>
+                        <NavLink
+                            href={route("skills")}
+                            active={route().current("skills")}
+                        >
+                            Skills
+                        </NavLink>
+
+                        <NavLink
+                            href={route("about")}
+                            active={route().current("about")}
+                        >
+                            About
+                        </NavLink>
+                        <NavLink
+                            href={route("contact")}
+                            active={route().current("contact")}
+                        >
+                            Contact
+                        </NavLink>
                     </div>
 
-                    <div className="pt-4 pb-1 border-t border-gray-200">
+                    <div className="pt-4 pb-1 border-t border-gray-200 flex items-center justify-center">
                         <div className="px-4">
-                            <div className="font-medium text-base text-gray-800">
+                            <div className="font-medium text-base text-white">
                                 {user.name}
                             </div>
-                            <div className="font-medium text-sm text-gray-500">
+                            <div className="font-medium text-sm text-gray-200">
                                 {user.email}
                             </div>
                         </div>
 
-                        <div className="mt-3 space-y-1">
+                        <div className="mt-3 space-y-1 flex">
                             <ResponsiveNavLink href={route("profile.edit")}>
                                 Profile
                             </ResponsiveNavLink>

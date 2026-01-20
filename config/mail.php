@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'default' => env('MAIL_MAILER', 'smtp'),
+    'default' => env('MAIL_MAILER', 'mailgun'),
 
     /*
     |--------------------------------------------------------------------------
@@ -51,10 +51,7 @@ return [
         ],
 
         'mailgun' => [
-            'transport' => 'mailgun',
-            // 'client' => [
-            //     'timeout' => 5,
-            // ],
+            'transport' => 'mailgun'
         ],
 
         'postmark' => [
@@ -81,9 +78,13 @@ return [
         'failover' => [
             'transport' => 'failover',
             'mailers' => [
+                'mailgun',
+                'postmark',
+                'sendmail',
                 'smtp',
                 'log',
             ],
+              'retry_after' => 60,
         ],
     ],
 

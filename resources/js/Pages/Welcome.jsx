@@ -1,57 +1,106 @@
+import { useState } from "react";
 import { Link, Head } from "@inertiajs/react";
 import ApplicationLogo from "@/Components/ApplicationLogo";
 import NavLink from "@/Components/NavLink";
+import Dropdown from "@/Components/Dropdown";
+import Footer from "@/Components/footer";
 
 export default function Welcome({ user, auth, laravelVersion, phpVersion }) {
+    const [showingNavigationDropdown, setShowingNavigationDropdown] =
+        useState(false);
     return (
         <>
             <div className="bg-greenie flex justify-between items-center">
-                <div className="text-white flex justify-center text-3xl p-6">
+                <div className="text-white flex justify-between text-3xl p-6">
                     <p className="">Welcome</p>
+                    <div className="flex items-center sm:hidden mr-5">
+                        <button
+                            onClick={() =>
+                                setShowingNavigationDropdown(
+                                    (previousState) => !previousState,
+                                )
+                            }
+                            className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out"
+                        >
+                            <svg
+                                className="h-6 w-6"
+                                stroke="currentColor"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    className={
+                                        !showingNavigationDropdown
+                                            ? "inline-flex"
+                                            : "hidden"
+                                    }
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth="2"
+                                    d="M4 6h16M4 12h16M4 18h16"
+                                />
+                                <path
+                                    className={
+                                        showingNavigationDropdown
+                                            ? "inline-flex"
+                                            : "hidden"
+                                    }
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth="2"
+                                    d="M6 18L18 6M6 6l12 12"
+                                />
+                            </svg>
+                        </button>
+                    </div>
                 </div>
                 {auth.user ? (
-                    <div className="hidden sm:flex sm:items-center sm:ml-6">
-                        <div className="ml-3 relative">
-                            <Dropdown>
-                                <Dropdown.Trigger>
-                                    <span className="inline-flex rounded-md">
-                                        <button
-                                            type="button"
-                                            className=" mt-5 mr-5 mb-1 inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-white hover:bg-bluie focus:outline-none transition ease-in-out duration-150"
-                                        >
-                                            {auth.user.name}
-
-                                            <svg
-                                                className="ml-2 -mr-0.5 h-4 w-4"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                viewBox="0 0 20 20"
-                                                fill="currentColor"
+                    <>
+                        <div className="hidden sm:flex sm:items-center sm:ml-6">
+                            <div className="ml-3 relative">
+                                <Dropdown>
+                                    <Dropdown.Trigger>
+                                        <span className="inline-flex rounded-md">
+                                            <button
+                                                type="button"
+                                                className=" mt-5 mr-5 mb-1 inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-white hover:bg-bluie focus:outline-none transition ease-in-out duration-150"
                                             >
-                                                <path
-                                                    fillRule="evenodd"
-                                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                                    clipRule="evenodd"
-                                                />
-                                            </svg>
-                                        </button>
-                                    </span>
-                                </Dropdown.Trigger>
+                                                {auth.user.name}
 
-                                <Dropdown.Content>
-                                    <Dropdown.Link href={route("profile.edit")}>
-                                        Profile
-                                    </Dropdown.Link>
-                                    <Dropdown.Link
-                                        href={route("logout")}
-                                        method="post"
-                                        as="button"
-                                    >
-                                        Log Out
-                                    </Dropdown.Link>
-                                </Dropdown.Content>
-                            </Dropdown>
+                                                <svg
+                                                    className="ml-2 -mr-0.5 h-4 w-4"
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    viewBox="0 0 20 20"
+                                                    fill="currentColor"
+                                                >
+                                                    <path
+                                                        fillRule="evenodd"
+                                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                                        clipRule="evenodd"
+                                                    />
+                                                </svg>
+                                            </button>
+                                        </span>
+                                    </Dropdown.Trigger>
+
+                                    <Dropdown.Content>
+                                        <Dropdown.Link
+                                            href={route("profile.edit")}
+                                        >
+                                            Profile
+                                        </Dropdown.Link>
+                                        <Dropdown.Link
+                                            href={route("logout")}
+                                            method="post"
+                                            as="button"
+                                        >
+                                            Log Out
+                                        </Dropdown.Link>
+                                    </Dropdown.Content>
+                                </Dropdown>
+                            </div>
                         </div>
-                    </div>
+                    </>
                 ) : (
                     <div>
                         <Link
@@ -73,7 +122,41 @@ export default function Welcome({ user, auth, laravelVersion, phpVersion }) {
 
             <Head title="Welcome" />
 
-            <div className="sm:flex pt-10 flex-col sm:items-center min-h-screen bg-center bg-greenie selection:text-white">
+            <div
+                className={
+                    (showingNavigationDropdown ? "block" : "hidden") +
+                    " sm:hidden bg-greenie"
+                }
+            >
+                <div className="pt-2 pb-3 space-y-1">
+                    <NavLink
+                        href={route("projects")}
+                        active={route().current("projects")}
+                    >
+                        Projects
+                    </NavLink>
+                    <NavLink
+                        href={route("skills")}
+                        active={route().current("skills")}
+                    >
+                        Skills
+                    </NavLink>
+
+                    <NavLink
+                        href={route("about")}
+                        active={route().current("about")}
+                    >
+                        About
+                    </NavLink>
+                    <NavLink
+                        href={route("contact")}
+                        active={route().current("contact")}
+                    >
+                        Contact
+                    </NavLink>
+                </div>
+            </div>
+            <div className="sm:flex pt-10 flex-col sm:items-center min-h-[90vh] bg-center bg-greenie selection:text-white">
                 <div className="text-right">
                     <div className="hidden sm:-my-px sm:ml-10 sm:flex">
                         <>
@@ -116,9 +199,9 @@ export default function Welcome({ user, auth, laravelVersion, phpVersion }) {
                 </div>
                 <div className="sm:flex">
                     <div className="">
-                        <div>
+                        <div className="flex justify-center">
                             <img
-                                className="h-96 w-full rounded-2xl "
+                                className="h-96 w-full rounded-2xl max-w-xs "
                                 src="/build/assets/headshot.jpeg"
                                 alt="main logo"
                             />
@@ -129,17 +212,10 @@ export default function Welcome({ user, auth, laravelVersion, phpVersion }) {
                         <p className="pt-6 text-white text-2xl">
                             Greenville, SC
                         </p>
-                        {/* <div className="pt-6">
-                            <div className="text-white text-xl">
-                                864-561-5306{" "}
-                            </div>
-                            <div className="text-white text-xl">
-                                paulwarrenseabrook@gmail.com
-                            </div>
-                        </div> */}
                     </div>
                 </div>
             </div>
+            {/* <Footer /> */}
         </>
     );
 }

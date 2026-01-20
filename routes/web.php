@@ -1,9 +1,13 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ContactController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use App\Http\Controllers\MailController;
+use App\Mail\Contact;
+use Illuminate\Support\Facades\Mail;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,7 +42,6 @@ Route::inertia('/about', 'About')->name('about');
 Route::get('/contact', function () {
     return Inertia::render('Contact');
 })->middleware(['auth', 'verified'])->name('contact');
-
 
 
 Route::middleware('auth')->group(function () {
