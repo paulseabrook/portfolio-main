@@ -19,6 +19,10 @@ export default {
                 greenie: "#5B6A48",
                 bluie: "#83aad4",
             },
+            screens: {
+                xs: "475px", // Adds a new breakpoint
+                ...defaultTheme.screens, // Keep default breakpoints
+            },
         },
     },
 

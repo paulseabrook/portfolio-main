@@ -9,7 +9,7 @@ export default function About({ auth }) {
             <Head title="About" />
             <div className="bg-blue-50 min-h-screen">
                 <Navigation auth={auth} user={auth.user} />
-                <main className="max-w-6xl mx-auto pt-4 px-6">
+                <main className="max-w-6xl mx-auto pt-4 px-6 pb-5">
                     {/* Flex container for side-by-side layout */}
                     <div className="flex flex-col md:flex-row gap-8">
                         {/* Image */}
@@ -31,7 +31,7 @@ export default function About({ auth }) {
                             initial={{ opacity: 0, x: 30 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.8 }}
-                            className="bg-white p-8 rounded-lg shadow-lg flex-1 h-auto max-h-[450px]"
+                            className="bg-white p-8 rounded-lg shadow-lg flex-1 h-auto"
                         >
                             <h1 className="text-3xl font-bold mb-4 text-gray-800">
                                 About

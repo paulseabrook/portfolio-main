@@ -13,7 +13,6 @@ const skills = [
     { name: "ASP.NET", years: 2 },
     { name: "PHP", years: 1 },
     { name: "React", years: 1 },
-    { name: "Node.js", years: 1 },
 ];
 
 const maxYears = Math.max(...skills.map((s) => s.years));
@@ -36,6 +35,10 @@ export default function Skills({ auth }) {
                     <h2 className="text-2xl font-bold mb-6 text-center text-white">
                         Skills
                     </h2>
+                    <div className="text-white text-center">
+                        The visual below represents the number of years I have
+                        professionally been working in a language or framework.
+                    </div>
                     <div className="space-y-4">
                         {skills.map((skill, index) => (
                             <div

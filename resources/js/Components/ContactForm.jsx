@@ -76,7 +76,7 @@ function ContactForm() {
                             htmlFor="name"
                             className="block text-white font-semibold  mb-2"
                         >
-                            Name:
+                            Your name:
                         </label>
                         <input
                             type="text"
@@ -95,7 +95,7 @@ function ContactForm() {
                             htmlFor="email"
                             className="block text-white font-semibold mb-2"
                         >
-                            Email:
+                            Your email:
                         </label>
                         <input
                             type="email"

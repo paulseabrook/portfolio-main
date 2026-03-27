@@ -24,6 +24,6 @@ class ContactFormController extends Controller
             // Re-throw or handle gracefully
         }
 
-            return response()->json(['message' => 'Your message has been sent successfully!']);
+            return response()->json(['message' => 'Thanks for reaching out! I\'ll be in touch!']);
         }
 }
