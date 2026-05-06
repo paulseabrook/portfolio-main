@@ -1,0 +1,1 @@
+import{j as r}from"./app-64247b13.js";function t(){return r.jsx("footer",{style:{backgroundColor:"#fff6ec",padding:"20px",textAlign:"center",marginTop:"auto"},children:r.jsx("p",{children:"This portfolio was custom built using the Laravel PHP framework and React library."})})}export{t as F};
