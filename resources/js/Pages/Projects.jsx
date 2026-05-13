@@ -33,7 +33,7 @@ export default function Projects({ auth, active = false, className = "" }) {
                             <br></br>
                             <br></br>
                             <a
-                                href="https://github.com/paulseabrook/lerpr"
+                                href="https://github.com/paulseabrook/portfolio-main"
                                 target="_blank"
                                 rel="noreferrer"
                                 className={
