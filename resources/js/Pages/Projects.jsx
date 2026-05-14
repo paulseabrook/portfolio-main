@@ -53,12 +53,12 @@ export default function Projects({ auth, active = false, className = "" }) {
                         <h3 className="text-white text-md flex align-center justify-center">
                             Blackjack
                         </h3>
-                        <Link href="https://paulseabrook.github.io/blackjack/">
+                        <a href="https://paulseabrook.github.io/blackjack/">
                             <img
                                 src="/build/assets/Blackjack.png"
                                 className="rounded-2xl transition-transform duration-500 ease-in-out hover:scale-110"
                             />
-                        </Link>{" "}
+                        </a>{" "}
                         <a
                             href="https://github.com/paulseabrook/blackjack"
                             target="_blank"
